@@ -1830,6 +1830,17 @@ WINDOWS_10_MSIX_ONLY = NimbusTargetingConfig(
     application_choice_names=(Application.DESKTOP.name,),
 )
 
+MSIX_FIRST_RUN = NimbusTargetingConfig(
+    name="First start-up users with MSIX Firefox",
+    slug="msix_first_run",
+    description=("First start-up users (e.g. for about:welcome) with MSIX Firefox"),
+    targeting="(isFirstRun && os.isWindows && os.windowsVersion >= 10 && isMSIX)",
+    desktop_telemetry="",
+    sticky_required=False,
+    is_first_run_required=True,
+    application_choice_names=(Application.DESKTOP.name,),
+)
+
 IOS_IPHONE_USERS_ONLY = NimbusTargetingConfig(
     name="iPhone users only",
     slug="ios_iphone_users_only",
